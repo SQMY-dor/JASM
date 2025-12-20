@@ -106,13 +106,6 @@ checkSuccessfulExitCode(os.system(f"7z a -mx4 {releaseArchiveName} .\\{RELEASE_D
 print()
 print("Finished zipping release directory")
 
-env_file = os.getenv('GITHUB_ENV')
-if env_file is None:
-	exit(1)
-
-with open(env_file, "a") as myfile:
-    myfile.write(f"zipFile={releaseArchiveName}")
-
 checkSuccessfulExitCode(os.system(f"7z h -scrcsha256 .\\{releaseArchiveName}"))
 
 
