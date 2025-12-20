@@ -103,7 +103,7 @@ jobs:
     - name: Build, publish and zip the app
       run: |
         python ${{ github.workspace }}\Build\Release.py ${{ matrix.build_type == 'SelfContained' && 'SelfContained' || '' }} ExcludeElevator
-        echo "zipFile=JASM_v${{ env.VERSION }}_${{ matrix.build_type }}.7z" >> $env:GITHUB_ENV
+        echo "zipFile=JASM_v${{ env.VERSION }}.7z" >> $env:GITHUB_ENV
       shell: pwsh
 
     - name: Verify build output
@@ -124,9 +124,9 @@ jobs:
     - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
-        name:  JASM_${{ matrix.build_type }}_${{ env.VERSION }}
+        name: JASM_${{ env.VERSION }}
         path: ${{ github.workspace }}\${{ env.zipFile }}
-        retention-days:  5
+        retention-days: 5
 
   release:
     needs: build
