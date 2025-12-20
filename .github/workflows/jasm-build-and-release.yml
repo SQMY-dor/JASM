@@ -187,7 +187,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ${{ github.workspace }}/JASM_v${{ steps.get_version.outputs.VERSION }}.7z
+          asset_path: ./artifacts/JASM_${{ steps.get_version.outputs.VERSION }}/JASM_v${{ steps.get_version.outputs.VERSION }}.7z
           asset_name: JASM_v${{ steps.get_version.outputs.VERSION }}.7z
           asset_content_type: application/x-7z-compressed
 
