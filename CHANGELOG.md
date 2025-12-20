@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.0.2](https://github.com/SQMY-dor/JASM/compare/v3.0.1...v3.0.2) (2025-12-20)
+
+
+### Bug Fixes
+
+* 修复构建输出文件名，添加版本前缀 'v' ([c6d2de5](https://github.com/SQMY-dor/JASM/commit/c6d2de570eadcfd817e303eac0f540fc7d62eeb9))
+* 修正构建输出文件名，移除构建类型后缀 ([c6f7287](https://github.com/SQMY-dor/JASM/commit/c6f7287a6927b634a0e7f4a37d23d04f83ee2a41))
+* 更新构建输出文件路径和名称，添加版本前缀 'v' ([3127c02](https://github.com/SQMY-dor/JASM/commit/3127c020060340bfe0e084579e91fb12cad60c94))
+* 移除对 GITHUB_ENV 的依赖，简化发布过程 ([a336be2](https://github.com/SQMY-dor/JASM/commit/a336be27ceb28922fafb0be1b2d3bf1dc6b534fe))
+
 ## [3.0.1](https://github.com/SQMY-dor/JASM/compare/v3.0.0...v3.0.1) (2025-12-20)
 
 
