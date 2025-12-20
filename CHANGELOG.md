@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.1](https://github.com/SQMY-dor/JASM/compare/v3.0.0...v3.0.1) (2025-12-20)
+
+
+### Miscellaneous
+
+* 更新构建和发布工作流，修复格式和依赖项设置 ([8f67543](https://github.com/SQMY-dor/JASM/commit/8f67543c6ba13fdff057445fd32c5bd4c7753905))
+* 更新构建和发布工作流，修复格式和依赖项设置 ([58bff83](https://github.com/SQMY-dor/JASM/commit/58bff830d9473d27c3bc727bd1283c08f2c442c9))
+
 ## [3.0.0](https://github.com/SQMY-dor/JASM/compare/v2.24.2...v3.0.0) (2025-12-20)
 
 
