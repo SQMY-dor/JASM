@@ -27,12 +27,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Setup . NET
+    - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 10.x
 
-    - name:  Restore dependencies
+    - name: Restore dependencies
       run: dotnet restore
 
     - name: Format
@@ -40,7 +40,7 @@ jobs:
 
   main:
     needs: format
-    runs-on:  ubuntu-24. 04
+    runs-on: ubuntu-24.04
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release
@@ -49,7 +49,7 @@ jobs:
           release-type: simple
           package-name: jasm
           extra-files: |
-            src/GIMI-ModManager.WinUI/GIMI-ModManager. WinUI.csproj
+            src/GIMI-ModManager.WinUI/GIMI-ModManager.WinUI.csproj
           changelog-types: >
             [
               { "type": "revert", "section": "Reverts", "hidden": false },
@@ -68,7 +68,9 @@ jobs:
 
   build:
     needs: format
-    if: startsWith(github.event.head_commit.message, 'chore(main): release') || github.event_name == 'workflow_dispatch'
+    if: >-
+      startsWith(github.event.head_commit.message, 'chore(main): release') ||
+      github.event_name == 'workflow_dispatch'
     strategy:
       matrix:
         configuration: [Release]
@@ -82,7 +84,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name:  Setup .NET
+    - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 10.x
@@ -99,11 +101,11 @@ jobs:
 
     - name: Build, publish and zip the app
       run: |
-        python ${{ github.workspace }}\Build\Release. py ${{ matrix.build_type == 'SelfContained' && 'SelfContained' || '' }} ExcludeElevator
+        python ${{ github.workspace }}\Build\Release.py ${{ matrix.build_type == 'SelfContained' && 'SelfContained' || '' }} ExcludeElevator
         echo "zipFile=JASM_${{ env.VERSION }}_${{ matrix.build_type }}.7z" >> $env:GITHUB_ENV
       shell: pwsh
 
-    - name:  Verify build output
+    - name: Verify build output
       run: |
         Write-Host "Looking for:  ${{ github.workspace }}\${{ env.zipFile }}"
         if (Test-Path "${{ github.workspace }}\${{ env.zipFile }}") {
@@ -122,12 +124,14 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name:  JASM_${{ matrix.build_type }}_${{ env.VERSION }}
-        path: ${{ github. workspace }}\${{ env.zipFile }}
+        path: ${{ github.workspace }}\${{ env.zipFile }}
         retention-days:  5
 
   release:
-    needs:  build
-    if: startsWith(github.event.head_commit. message, 'chore(main): release') || github.event_name == 'workflow_dispatch'
+    needs: build
+    if: >-
+      startsWith(github.event.head_commit.message, 'chore(main): release') ||
+      github.event_name == 'workflow_dispatch'
     runs-on: windows-latest
     
     steps:
@@ -136,7 +140,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name:  Fetch all tags
+      - name: Fetch all tags
         run: git fetch --tags
         shell: bash
 
@@ -178,11 +182,11 @@ jobs:
       - name: Upload release asset
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN:  ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ env.UPLOAD_URL }}
           asset_path: ./artifacts/JASM_SelfContained_${{ steps.get_version.outputs.VERSION }}/JASM_${{ steps.get_version.outputs.VERSION }}_SelfContained.7z
-          asset_name:  JASM_${{ steps.get_version.outputs.VERSION }}_SelfContained. 7z
+          asset_name: JASM_${{ steps.get_version.outputs.VERSION }}_SelfContained.7z
           asset_content_type: application/x-7z-compressed
 
       - name: Create release summary
