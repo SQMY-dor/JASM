@@ -17,7 +17,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  format:
+  format: 
     runs-on: windows-latest
     defaults:
       run:
@@ -27,12 +27,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Setup .NET
+    - name: Setup . NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 10.x
 
-    - name: Restore dependencies
+    - name:  Restore dependencies
       run: dotnet restore
 
     - name: Format
@@ -40,7 +40,7 @@ jobs:
 
   main:
     needs: format
-    runs-on: ubuntu-24.04
+    runs-on:  ubuntu-24. 04
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release
@@ -49,7 +49,7 @@ jobs:
           release-type: simple
           package-name: jasm
           extra-files: |
-                        src/GIMI-ModManager.WinUI/GIMI-ModManager.WinUI.csproj
+            src/GIMI-ModManager.WinUI/GIMI-ModManager. WinUI.csproj
           changelog-types: >
             [
               { "type": "revert", "section": "Reverts", "hidden": false },
@@ -68,7 +68,7 @@ jobs:
 
   build:
     needs: format
-    if: "${{ startsWith(github.event.head_commit.message, 'chore(main): release') }}"
+    if: startsWith(github.event.head_commit.message, 'chore(main): release') || github.event_name == 'workflow_dispatch'
     strategy:
       matrix:
         configuration: [Release]
@@ -82,71 +82,113 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install .NET Core
+    - name:  Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 10.x
+
+    - name: Fetch all tags and get version
+      run: |
+        git fetch --tags
+        $latestTag = git describe --tags --abbrev=0
+        echo "VERSION=$latestTag" >> $env:GITHUB_ENV
+      shell: pwsh
 
     - name: Test
       run: dotnet test ${{ github.workspace }}\src
 
     - name: Build, publish and zip the app
       run: |
-        python ${{ github.workspace }}\Build\Release.py ${{ matrix.build_type == 'SelfContained' && 'SelfContained' || '' }} ExcludeElevator
-        echo "zipFile=JASM_v${{ github.ref }}_${{ matrix.build_type }}.7z" >> $GITHUB_ENV
+        python ${{ github.workspace }}\Build\Release. py ${{ matrix.build_type == 'SelfContained' && 'SelfContained' || '' }} ExcludeElevator
+        echo "zipFile=JASM_${{ env.VERSION }}_${{ matrix.build_type }}.7z" >> $env:GITHUB_ENV
+      shell: pwsh
 
-    - name: List build directory
-      run: dir ${{ github.workspace }}
+    - name:  Verify build output
+      run: |
+        Write-Host "Looking for:  ${{ github.workspace }}\${{ env.zipFile }}"
+        if (Test-Path "${{ github.workspace }}\${{ env.zipFile }}") {
+          Write-Host "✓ Build artifact found"
+          $size = (Get-Item "${{ github.workspace }}\${{ env.zipFile }}").Length / 1MB
+          Write-Host "  Size: $([Math]::Round($size, 2)) MB"
+        } else {
+          Write-Host "✗ Build artifact NOT found"
+          Write-Host "Available files in ${{ github.workspace }}:"
+          Get-ChildItem -Path ${{ github.workspace }} -Recurse -Filter "*.7z" | Select-Object FullName
+          exit 1
+        }
+      shell: pwsh
 
-    - name: Upload JASM
+    - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
-        name: JASM_${{ matrix.build_type }}
-        path: ${{ github.workspace }}\\${{ env.zipFile }}
+        name:  JASM_${{ matrix.build_type }}_${{ env.VERSION }}
+        path: ${{ github. workspace }}\${{ env.zipFile }}
+        retention-days:  5
 
   release:
-    needs: build
-    if: "${{ startsWith(github.event.head_commit.message, 'chore(main): release') }}"
+    needs:  build
+    if: startsWith(github.event.head_commit. message, 'chore(main): release') || github.event_name == 'workflow_dispatch'
     runs-on: windows-latest
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Download self-contained version build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: JASM_SelfContained
-
-      - name: Fetch all tags
+      - name:  Fetch all tags
         run: git fetch --tags
+        shell: bash
 
-      - name: Get version
+      - name: Get version from git tag
         id: get_version
         run: |
-          latest_tag=$(git describe --tags --abbrev=0)
-          echo "VERSION=$latest_tag" >> $GITHUB_OUTPUT
-        shell: bash
+          $latestTag = git describe --tags --abbrev=0
+          echo "VERSION=$latestTag" >> $env:GITHUB_OUTPUT
+        shell: pwsh
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with: 
+          path: ./artifacts
+
+      - name: List downloaded artifacts
+        run: |
+          Write-Host "Downloaded artifacts:"
+          Get-ChildItem -Path ./artifacts -Recurse | Select-Object FullName
+        shell: pwsh
 
       - name: Get latest release upload URL
         id: get_release
         run: |
-          $response = Invoke-RestMethod -Uri "https://api.github.com/repos/${{ github.repository }}/releases/latest" -Headers @{Authorization = "token ${{ secrets.GITHUB_TOKEN }}"}
-          $uploadUrl = $response.upload_url
-          echo "UPLOAD_URL=$uploadUrl" >> $env:GITHUB_ENV
-        
-      - name: Upload self-contained version release asset
+          $response = Invoke-RestMethod `
+            -Uri "https://api.github.com/repos/${{ github.repository }}/releases/latest" `
+            -Headers @{Authorization = "token ${{ secrets. GITHUB_TOKEN }}"} `
+            -ErrorAction Stop
+          
+          if ($null -eq $response. upload_url) {
+            Write-Host "Error: No release found or upload_url is empty"
+            exit 1
+          }
+          
+          echo "UPLOAD_URL=$($response.upload_url)" >> $env:GITHUB_ENV
+          Write-Host "Upload URL obtained"
+        shell: pwsh
+
+      - name: Upload release asset
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN:  ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ./JASM_${{ steps.get_version.outputs.VERSION }}.7z
-          asset_name: JASM_${{ steps.get_version.outputs.VERSION }}.7z
+          asset_path: ./artifacts/JASM_SelfContained_${{ steps.get_version.outputs.VERSION }}/JASM_${{ steps.get_version.outputs.VERSION }}_SelfContained.7z
+          asset_name:  JASM_${{ steps.get_version.outputs.VERSION }}_SelfContained. 7z
           asset_content_type: application/x-7z-compressed
+
+      - name: Create release summary
+        run: |
+          Write-Host "✓ Release Complete!"
+          Write-Host "  Version: ${{ steps.get_version.outputs.VERSION }}"
+          Write-Host "  Asset:  JASM_${{ steps.get_version.outputs.VERSION }}_SelfContained.7z"
+          Write-Host "  Repository: ${{ github.repository }}"
+        shell: pwsh
