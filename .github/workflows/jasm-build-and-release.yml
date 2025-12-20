@@ -93,7 +93,8 @@ jobs:
       run: |
         git fetch --tags
         $latestTag = git describe --tags --abbrev=0
-        echo "VERSION=$latestTag" >> $env:GITHUB_ENV
+        $version = $latestTag -replace '^v', ''
+        echo "VERSION=$version" >> $env:GITHUB_ENV
       shell: pwsh
 
     - name: Test
@@ -148,7 +149,8 @@ jobs:
         id: get_version
         run: |
           $latestTag = git describe --tags --abbrev=0
-          echo "VERSION=$latestTag" >> $env:GITHUB_OUTPUT
+          $version = $latestTag -replace '^v', ''
+          echo "VERSION=$version" >> $env:GITHUB_OUTPUT
         shell: pwsh
 
       - name: Download artifact
