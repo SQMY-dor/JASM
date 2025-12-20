@@ -103,7 +103,7 @@ jobs:
     - name: Build, publish and zip the app
       run: |
         python ${{ github.workspace }}\Build\Release.py ${{ matrix.build_type == 'SelfContained' && 'SelfContained' || '' }} ExcludeElevator
-        echo "zipFile=JASM_${{ env.VERSION }}_${{ matrix.build_type }}.7z" >> $env:GITHUB_ENV
+        echo "zipFile=JASM_v${{ env.VERSION }}_${{ matrix.build_type }}.7z" >> $env:GITHUB_ENV
       shell: pwsh
 
     - name: Verify build output
