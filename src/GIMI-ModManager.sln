@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.6.33829.357
+# Visual Studio Version 18
+VisualStudioVersion = 18.2.11415.280 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GIMI-ModManager.WinUI", "GIMI-ModManager.WinUI\GIMI-ModManager.WinUI.csproj", "{5261FF70-0D80-43C2-B211-36D913ACF3D3}"
 EndProject
@@ -135,8 +135,8 @@ Global
 		{39EB6AA5-26F0-469B-BD0F-63A9BEA764B4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{39EB6AA5-26F0-469B-BD0F-63A9BEA764B4}.Release|arm64.ActiveCfg = Release|Any CPU
 		{39EB6AA5-26F0-469B-BD0F-63A9BEA764B4}.Release|arm64.Build.0 = Release|Any CPU
-		{39EB6AA5-26F0-469B-BD0F-63A9BEA764B4}.Release|x64.ActiveCfg = Release|Any CPU
-		{39EB6AA5-26F0-469B-BD0F-63A9BEA764B4}.Release|x64.Build.0 = Release|Any CPU
+		{39EB6AA5-26F0-469B-BD0F-63A9BEA764B4}.Release|x64.ActiveCfg = Release|x64
+		{39EB6AA5-26F0-469B-BD0F-63A9BEA764B4}.Release|x64.Build.0 = Release|x64
 		{39EB6AA5-26F0-469B-BD0F-63A9BEA764B4}.Release|x86.ActiveCfg = Release|Any CPU
 		{39EB6AA5-26F0-469B-BD0F-63A9BEA764B4}.Release|x86.Build.0 = Release|Any CPU
 		{5C8021B3-A96D-492C-81FE-3E04FE80D239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

@@ -1,0 +1,15 @@
+{
+  "GameName": "明日方舟: 终末地",
+  "GameShortName": "Endfield",
+  "RarityName": "Rarity",
+  "GameIcon": "Start_Game.png",
+  "GameBananaUrl": "https://gamebanana.com/games/21842",
+  "GameModelImporterUrl": "",
+  "GameModelImporterName": "",
+  "GameModelImporterShortName": "",
+  "GameModelImporterExeName": [
+    "3DMigoto Loader.exe",
+    "Loader.exe",
+    "loader.exe"
+  ]
+}

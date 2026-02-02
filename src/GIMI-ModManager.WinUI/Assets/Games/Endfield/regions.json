@@ -1,0 +1,30 @@
+[
+  {
+    "InternalName": "power_endfield",
+    "DisplayName": "Endfield Industries"
+  },
+  {
+    "InternalName": "power_tribe",
+    "DisplayName": "Hannabit Circuit"
+  },
+  {
+    "InternalName": "power_army",
+    "DisplayName": "Order of Steel Oath"
+  },
+  {
+    "InternalName": "power_monastery",
+    "DisplayName": "Cabal of Tranquility"
+  },
+  {
+    "InternalName": "power_commerce",
+    "DisplayName": "TGCC"
+  },
+  {
+    "InternalName": "power_rhodes",
+    "DisplayName": "Rhodes Island"
+  },
+  {
+    "InternalName": "power_hongshan",
+    "DisplayName": "Hongshan"
+  }
+]
