@@ -1,0 +1,26 @@
+[
+  {
+    "InternalName": "Guard",
+    "DisplayName": "Guard"
+  },
+  {
+    "InternalName": "Caster",
+    "DisplayName": "Caster"
+  },
+  {
+    "InternalName": "Vanguard",
+    "DisplayName": "Vanguard"
+  },
+  {
+    "InternalName": "Defender",
+    "DisplayName": "Defender"
+  },
+  {
+    "InternalName": "Support",
+    "DisplayName": "Support"
+  },
+  {
+    "InternalName": "Striker",
+    "DisplayName": "Striker"
+  }
+]

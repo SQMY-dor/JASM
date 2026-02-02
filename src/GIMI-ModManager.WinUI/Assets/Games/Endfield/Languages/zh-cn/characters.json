@@ -1,0 +1,438 @@
+[
+  {
+    "InternalName": "Others",
+    "DisplayName": "其他角色"
+  },
+  {
+    "InternalName": "Weapons",
+    "DisplayName": "武器"
+  },
+  {
+    "Keys": [
+      "endminm",
+      "The Endministrator"
+    ],
+    "InternalName": "endminm",
+    "DisplayName": "管理员(女)",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0002_endminm.webp",
+    "Rarity": 6,
+    "Element": "Physical",
+    "Class": "Guard",
+    "Region": [
+      "power_endfield"
+    ],
+    "ModFilesName": "endminm",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "endminf",
+      "The Endministrator"
+    ],
+    "InternalName": "endminf",
+    "DisplayName": "管理员(男)",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0003_endminf.webp",
+    "Rarity": 6,
+    "Element": "Physical",
+    "Class": "Guard",
+    "Region": [
+      "power_endfield"
+    ],
+    "ModFilesName": "endminf",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "pelica",
+      "Perlica"
+    ],
+    "InternalName": "pelica",
+    "DisplayName": "佩丽卡",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0004_pelica.webp",
+    "Rarity": 5,
+    "Element": "Pulse",
+    "Class": "Caster",
+    "Region": [
+      "power_endfield"
+    ],
+    "ModFilesName": "pelica",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "chen",
+      "Chen Qianyu"
+    ],
+    "InternalName": "chen",
+    "DisplayName": "陈千语",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0005_chen.webp",
+    "Rarity": 5,
+    "Element": "Physical",
+    "Class": "Guard",
+    "Region": [
+      "power_endfield"
+    ],
+    "ModFilesName": "chen",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "wolfgd",
+      "Wulfgard"
+    ],
+    "InternalName": "wolfgd",
+    "DisplayName": "狼卫",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0006_wolfgd.webp",
+    "Rarity": 5,
+    "Element": "Fire",
+    "Class": "Caster",
+    "Region": [
+      "power_endfield"
+    ],
+    "ModFilesName": "wolfgd",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "ikut",
+      "Arclight"
+    ],
+    "InternalName": "ikut",
+    "DisplayName": "弧光",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0007_ikut.webp",
+    "Rarity": 5,
+    "Element": "Pulse",
+    "Class": "Vanguard",
+    "Region": [
+      "power_tribe"
+    ],
+    "ModFilesName": "ikut",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "azrila",
+      "Ember"
+    ],
+    "InternalName": "azrila",
+    "DisplayName": "余烬",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0009_azrila.webp",
+    "Rarity": 6,
+    "Element": "Fire",
+    "Class": "Defender",
+    "Region": [
+      "power_army"
+    ],
+    "ModFilesName": "azrila",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "seraph",
+      "Xaihi"
+    ],
+    "InternalName": "seraph",
+    "DisplayName": "赛希",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0011_seraph.webp",
+    "Rarity": 5,
+    "Element": "Cryst",
+    "Class": "Support",
+    "Region": [
+      "power_monastery"
+    ],
+    "ModFilesName": "seraph",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "avywen",
+      "Avywenna"
+    ],
+    "InternalName": "avywen",
+    "DisplayName": "艾维文娜",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0012_avywen.webp",
+    "Rarity": 5,
+    "Element": "Pulse",
+    "Class": "Striker",
+    "Region": [
+      "power_commerce"
+    ],
+    "ModFilesName": "avywen",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "aglina",
+      "Gilberta"
+    ],
+    "InternalName": "aglina",
+    "DisplayName": "洁尔佩塔",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0013_aglina.webp",
+    "Rarity": 6,
+    "Element": "Natural",
+    "Class": "Support",
+    "Region": [
+      "power_rhodes"
+    ],
+    "ModFilesName": "aglina",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "aurora",
+      "Snowshine"
+    ],
+    "InternalName": "aurora",
+    "DisplayName": "昼雪",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0014_aurora.webp",
+    "Rarity": 5,
+    "Element": "Cryst",
+    "Class": "Defender",
+    "Region": [
+      "power_rhodes"
+    ],
+    "ModFilesName": "aurora",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "lifeng",
+      "Lifeng"
+    ],
+    "InternalName": "lifeng",
+    "DisplayName": "黎风",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0015_lifeng.webp",
+    "Rarity": 6,
+    "Element": "Physical",
+    "Class": "Guard",
+    "Region": [
+      "power_hongshan"
+    ],
+    "ModFilesName": "lifeng",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "laevat",
+      "Laevatain"
+    ],
+    "InternalName": "laevat",
+    "DisplayName": "莱万汀",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0016_laevat.webp",
+    "Rarity": 6,
+    "Element": "Fire",
+    "Class": "Striker",
+    "Region": [
+      "power_rhodes"
+    ],
+    "ModFilesName": "laevat",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "yvonne",
+      "Yvonne"
+    ],
+    "InternalName": "yvonne",
+    "DisplayName": "伊冯",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0017_yvonne.webp",
+    "Rarity": 6,
+    "Element": "Cryst",
+    "Class": "Caster",
+    "Region": [
+      "power_endfield"
+    ],
+    "ModFilesName": "yvonne",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "dapan",
+      "Da Pan"
+    ],
+    "InternalName": "dapan",
+    "DisplayName": "大潘",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0018_dapan.webp",
+    "Rarity": 5,
+    "Element": "Physical",
+    "Class": "Striker",
+    "Region": [
+      "power_hongshan"
+    ],
+    "ModFilesName": "dapan",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "karin",
+      "Akekuri"
+    ],
+    "InternalName": "karin",
+    "DisplayName": "秋栗",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0019_karin.webp",
+    "Rarity": 4,
+    "Element": "Fire",
+    "Class": "Vanguard",
+    "Region": [
+      "power_endfield"
+    ],
+    "ModFilesName": "karin",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "meurs",
+      "Catcher"
+    ],
+    "InternalName": "meurs",
+    "DisplayName": "卡契尔",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0020_meurs.webp",
+    "Rarity": 4,
+    "Element": "Physical",
+    "Class": "Defender",
+    "Region": [
+      "power_endfield"
+    ],
+    "ModFilesName": "meurs",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "whiten",
+      "Estella"
+    ],
+    "InternalName": "whiten",
+    "DisplayName": "埃特拉",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0021_whiten.webp",
+    "Rarity": 4,
+    "Element": "Cryst",
+    "Class": "Guard",
+    "Region": [
+      "power_endfield"
+    ],
+    "ModFilesName": "whiten",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "bounda",
+      "Fluorite"
+    ],
+    "InternalName": "bounda",
+    "DisplayName": "萤石",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0022_bounda.webp",
+    "Rarity": 4,
+    "Element": "Natural",
+    "Class": "Caster",
+    "Region": [
+      "power_endfield"
+    ],
+    "ModFilesName": "bounda",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "antal",
+      "Antal"
+    ],
+    "InternalName": "antal",
+    "DisplayName": "安塔尔",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0023_antal.webp",
+    "Rarity": 4,
+    "Element": "Pulse",
+    "Class": "Support",
+    "Region": [
+      "power_endfield"
+    ],
+    "ModFilesName": "antal",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "deepfin",
+      "Alesh"
+    ],
+    "InternalName": "deepfin",
+    "DisplayName": "阿列什",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0024_deepfin.webp",
+    "Rarity": 5,
+    "Element": "Cryst",
+    "Class": "Vanguard",
+    "Region": [],
+    "ModFilesName": "deepfin",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "ardelia",
+      "Ardelia"
+    ],
+    "InternalName": "ardelia",
+    "DisplayName": "艾尔黛拉",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0025_ardelia.webp",
+    "Rarity": 6,
+    "Element": "Natural",
+    "Class": "Support",
+    "Region": [
+      "power_rhodes"
+    ],
+    "ModFilesName": "ardelia",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "lastrite",
+      "Last Rite"
+    ],
+    "InternalName": "lastrite",
+    "DisplayName": "别礼",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0026_lastrite.webp",
+    "Rarity": 6,
+    "Element": "Cryst",
+    "Class": "Striker",
+    "Region": [],
+    "ModFilesName": "lastrite",
+    "InGameSkins": []
+  },
+  {
+    "Keys": [
+      "pograni",
+      "Pogranichnik"
+    ],
+    "InternalName": "pograni",
+    "DisplayName": "骏卫",
+    "ReleaseDate": "2026-01-31T22:34:48",
+    "Image": "chr_0029_pograni.webp",
+    "Rarity": 5,
+    "Element": "Physical",
+    "Class": "Vanguard",
+    "Region": [
+      "power_rhodes"
+    ],
+    "ModFilesName": "pograni",
+    "InGameSkins": []
+  }
+]

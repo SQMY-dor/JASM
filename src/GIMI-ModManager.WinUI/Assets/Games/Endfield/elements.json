@@ -1,0 +1,27 @@
+[
+  {
+    "InternalName": "Physical",
+    "DisplayName": "Physical",
+    "Image": "Physical.png"
+  },
+  {
+    "InternalName": "Pulse",
+    "DisplayName": "Electric",
+    "Image": "Electric.png"
+  },
+  {
+    "InternalName": "Fire",
+    "DisplayName": "Heat",
+    "Image": "Heat.png"
+  },
+  {
+    "InternalName": "Cryst",
+    "DisplayName": "Cryo",
+    "Image": "Cryo.png"
+  },
+  {
+    "InternalName": "Natural",
+    "DisplayName": "Nature",
+    "Image": "Nature.png"
+  }
+]

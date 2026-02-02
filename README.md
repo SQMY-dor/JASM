@@ -2,7 +2,7 @@
 
 > 原项目地址：[https://github.com/Jorixon/JASM](https://github.com/Jorixon/JASM)
 
-未处理的异常会写入 JASM 应用程序目录中的 Logs 文件。
+未处理的异常会写入 JASM 应用程序目录中的 Logs 文件。 
 
 ## 功能
 - 精美的用户界面 👀
